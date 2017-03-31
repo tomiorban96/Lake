@@ -1,0 +1,28 @@
+#ifndef CITY_H
+#define CITY_H
+
+//Testing for git to push lololol
+
+#include <string>
+#include <vector>
+
+class City;
+
+struct ferryLine{
+   City *next;
+   int time;
+
+   ferryLine(City *next, int time) : next(next), time(time) {}
+};
+
+class City{
+public:
+
+   std::string name;
+   int bicTime;
+   std::vector<ferryLine> lines;
+
+   City(std::string);
+};
+
+#endif // CITY_H
