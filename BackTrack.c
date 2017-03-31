@@ -8,47 +8,58 @@ typedef struct{ // Route objektumokkal lesz megvalósítva
         copy_of_v3;
 } model;
 
-model m,*t; // Pointer helyett vektor, vagy hasonló (esetleg stack)
+model m,*t; // Pointer helyett stack, amit inicializálunk is
 
 int v0,	/* Vezérlo változó */
     v1,	/* Korábbi döntések száma */
     v2,	/* Választási lehetoségek száma */
     v3;	/* Aktuális lehetoség sorszáma */
 
+// Graphivárosban vagyunk, és eddig eltelt id? (passedTime) != 0
+// Eddigi legjobb megoldással összehasonlítjuk, ha jobb, akkor lecseréljük
 int ft1(void){/* A célt elértük? */
-	return 1;
+	return 1; //return 0 lesz
 }
 
+// Egyenl?re kihagyjuk, kés?bb optimalizálára
 int ft2(void){/* Egyáltalán lehetséges még a célt elérni? */
 	return 1;
 }
 
+// Nem kell
 void pa0(void){/* Elokészítés */
     t=calloc(sizeof (model),MAX_deepness);
 }
 
+// Száma lines.size() + 1
 int fa1(void){/* Döntési lehetoségek számba vétele */
 	return 1;
 }
 
+// Kihagyjuk
 void pa2(void){/* Döntési lehetoségek rangsorolása */
 }
 
+// Stacken m?veletekkel
 void pa4(void){/*Visszaállítás */
     m=t[v1];
     v2=m.copy_of_v2;
     v3=m.copy_of_v3;
 }
 
+// Hasonlóan a visszaállításhoz
 void pa6(void){/*Mentés */
     m.copy_of_v2=v2;
     m.copy_of_v3=v3;
     t[v1]=m;
 }
 
+// Lépünk egyet valamelyik útvonalon (adatok frissítése)
 void pa7(void){/*Érvényre juttatás */
 }
 
+
+// Máshogy lesz
 void pa8(void){/* Megoldás kijelzése */
 }
 
