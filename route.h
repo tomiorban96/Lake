@@ -8,7 +8,7 @@ class Route{
 public:
    int bicTime;
    int passedTime;
-   int numOfLines;
+   //int numOfLines;
    City* position;
    std::vector<City> cities;
    int copy_of_v2;

@@ -1,15 +1,19 @@
 #include "city.h"
+#include "route.h"
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <stack>
 #include <sstream>
 
 using namespace std;
 
-int N = 0;
-int F = 0;
-int T = 0;
+int N = 0; // Városok száma
+int F = 0; // Kompjáratok száma
+int T = 0; // Induló idő
 
+stack<Route> saves; // Állapotok mentése
+Route bestRoute, actualRoute;
 
 void readFile(vector<City>& v){
 
