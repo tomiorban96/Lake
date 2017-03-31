@@ -1,7 +1,7 @@
 #ifndef CITY_H
 #define CITY_H
 
-//Testing for git to push lololol trololololo
+//Testing for git to push lololol
 
 #include <string>
 #include <vector>
