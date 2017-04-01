@@ -16,6 +16,14 @@ int T = 0; // Induló idő
 stack<Route> saves; // Állapotok mentése
 Route bestRoute, actualRoute;
 
+namespace backtrack{
+
+   int fa1(void){
+      return actualRoute.position->lines.size() + 1;
+   }
+   
+};
+
 void readFile(vector<City>& v){
 
    ifstream File;
