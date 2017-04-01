@@ -23,7 +23,7 @@ public:
    int bicTime;
    std::vector<ferryLine> lines;
 
-   City(std::string);
+   City(std::string name) : name(name) {}
    City() = default;
 };
 
