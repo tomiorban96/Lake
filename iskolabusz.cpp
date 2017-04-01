@@ -1,8 +1,8 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 int main()
 {
-	int i = 0, N;
+	int i, N;
 	std::cin >> N;
 	if (N - 1)
 	{
