@@ -13,6 +13,8 @@ public:
    std::vector<City> cities;
    int copy_of_v2;
    int copy_of_v3;
+
+   Route() = default;
 };
 
 #endif // ROUTE_H
