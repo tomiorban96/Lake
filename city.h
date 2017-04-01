@@ -12,6 +12,7 @@ public:
    City *next;
    int time;
 
+   ferryLine() = default;
    ferryLine(City *next, int time) : next(next), time(time) {}
 };
 
