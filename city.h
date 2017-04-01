@@ -24,6 +24,7 @@ public:
    std::vector<ferryLine> lines;
 
    City(std::string);
+   City() = default;
 };
 
 #endif // CITY_H
