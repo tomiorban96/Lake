@@ -7,7 +7,8 @@
 
 class City;
 
-struct ferryLine{
+class ferryLine{
+public:
    City *next;
    int time;
 
