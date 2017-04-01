@@ -5,6 +5,7 @@
 #include <vector>
 #include <stack>
 #include <sstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -56,18 +57,17 @@ void readFile(vector<City>& v){
          ferries >> to;
          ferries >> _time;
 
-         if (from != "Graphiváros" && to != "Graphiváros"){
-            if (from > to){
-               string temp;
-               temp = from;
-               from = to;
-               to = temp;
-            }
-         }
 
          for (size_t i = 0; i < v.size(); i++){
             if (from == v[i].name) indexFrom = i;
             if (to == v[i].name) indexTo = i;
+         }
+
+         if (from != "Graphiváros" && to != "Graphiváros"){
+            if (indexFrom > indexTo){
+               swap(indexFrom, indexTo);
+               swap(from, to);
+            }
          }
 
          v[indexFrom].lines.push_back(ferryLine(&v[indexTo], _time));
@@ -86,7 +86,7 @@ int main(int argc, char **argv){
    vector<City> cities;
    readFile(cities);
 
-   //for(auto c : cities) if (c.lines.size() > 0) cout << c.name << "->" << c.lines[0].next->name << c.lines[0].time << endl;
+   for(auto c : cities) if (c.lines.size() > 0) cout << c.name << "->" << c.lines[0].next->name << c.lines[0].time << endl;
 
    return 0;
 }
