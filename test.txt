@@ -6,6 +6,6 @@ Graphipark
 Graphiújfalu
 30 15 60 45 60
 2
-Graphiháza Graphiújfalu 30
+Graphiújfalu Graphiháza 30
 Graphiváros Graphit 900
 180
