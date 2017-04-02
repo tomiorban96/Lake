@@ -21,7 +21,7 @@ namespace backtrack{
    int fa1(void){
       return actualRoute.position->lines.size() + 1;
    }
-   
+
 };
 
 void readFile(vector<City>& v){
@@ -78,11 +78,11 @@ void readFile(vector<City>& v){
             }
          }
 
-         v[indexFrom].lines.push_back(ferryLine(&v[indexTo], _time));
+         v[indexFrom].lines.push_back(FerryLine(&v[indexTo], _time));
 
          if (from == "Graphiváros" || to == "Graphiváros"){
             F++;
-            v[indexTo].lines.push_back(ferryLine(&v[indexFrom], _time));
+            v[indexTo].lines.push_back(FerryLine(&v[indexFrom], _time));
          }
       }
 
