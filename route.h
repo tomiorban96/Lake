@@ -13,7 +13,14 @@ public:
    int copy_of_v2;
    int copy_of_v3;
 
-   Route() = default;
+   Route()
+   {
+       bicTime=0;
+       passedTime=0;
+       position=nullptr;
+       copy_of_v2=0;
+       copy_of_v3=0;
+   }
    ~Route() { delete position; }
    Route(const Route& r)
    {
