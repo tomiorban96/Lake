@@ -38,10 +38,7 @@ public:
 
    FerryLine() = default;
    FerryLine(City *next, int time) : next(next), time(time) {}
-   ~FerryLine()
-   {
-       delete next;
-   }
+   
    FerryLine(const FerryLine& f)
    {
        this->next=f.next;

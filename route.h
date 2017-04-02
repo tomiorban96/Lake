@@ -21,13 +21,13 @@ public:
        copy_of_v2=0;
        copy_of_v3=0;
    }
-   ~Route() { delete position; }
+   
    Route(const Route& r)
    {
        this->bicTime=r.bicTime;
        this->passedTime=r.passedTime;
        this->position=r.position;
-       this->cities=r.cities; //tarolokat is lehet egyenlõvé tenni, megneztem
+       this->cities=r.cities; //tarolokat is lehet egyenlï¿½vï¿½ tenni, megneztem
        this->copy_of_v2=r.copy_of_v2;
        this->copy_of_v3=r.copy_of_v3;
    }
