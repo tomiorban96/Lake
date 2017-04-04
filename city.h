@@ -8,7 +8,7 @@ class FerryLine;
 
 class City{
 public:
-
+    City *next;
    std::string name;
    int bicTime;
    std::vector<FerryLine> lines;
@@ -38,7 +38,7 @@ public:
 
    FerryLine() = default;
    FerryLine(City *next, int time) : next(next), time(time) {}
-   
+
    FerryLine(const FerryLine& f)
    {
        this->next=f.next;
