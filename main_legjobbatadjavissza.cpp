@@ -77,13 +77,6 @@ Route bestRoute, actualRoute;
             {
                 found=true;
                 bestRoute=actualRoute;
-                /*cout<<"talaltam egy jobbat"<<endl;
-                cout<<bestRoute.bicTime<< " " <<bestRoute.passedTime<<endl;
-                                cout<<bestRoute.fCities.size()/2<<endl;
-                                for (size_t i=0;i<bestRoute.fCities.size();)
-                                {
-                                    cout<<bestRoute.fCities[i++] << " " << bestRoute.fCities[i++] <<endl;
-                                }*/
             }
         }
         return 0;
