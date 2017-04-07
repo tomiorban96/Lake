@@ -90,73 +90,50 @@ Route bestRoute, actualRoute;
 //};
 
 
-void readFile(vector<City>& v){
+void readFile(vector<City>& cities){
 
-   ifstream File;
    string line;
+   cin >> N;
+   for (int i = 0; i < N; i++){
+      cin >> line;
+      cities.push_back(City(line));
+   }
 
-   File.open("test.txt", ios::in);
-   if (File.is_open()){
+   for (int i = 0; i < N; i++) cin >> cities[i].bicTime;
 
-      File >> N;
+   cin >> F;
 
-      for (int i = 0; i < N; i++){
-         File >> line;
-         v.push_back(City(line));
+   for (int i = 0; i < F; i++){
+
+      int indexFrom, indexTo, _time;
+      string from, to;
+
+      cin >> from >> to >> _time;
+
+      for (size_t i = 0; i < cities.size(); i++){
+         if (from == cities[i].name) indexFrom = i;
+         if (to == cities[i].name) indexTo = i;
       }
 
-      getline(File, line); // marad egy üres sor vége jel, azt nyeli be
-      getline(File, line);
-
-      istringstream iss(line);
-      int n;
-
-      for (int i = 0; i < N; i++){
-         iss >> n;
-         v[i].bicTime = n;
-      }
-
-      File >> F;
-      getline(File, line);
-
-      for (int i = 0; i < F; i++){
-
-         getline(File, line);
-         istringstream ferries(line);
-
-         int indexFrom, indexTo, _time;
-         string from, to;
-
-         ferries >> from;
-         ferries >> to;
-         ferries >> _time;
-
-
-         for (size_t i = 0; i < v.size(); i++){
-            if (from == v[i].name) indexFrom = i;
-            if (to == v[i].name) indexTo = i;
-         }
-
-         if (from != "Graphiváros" && to != "Graphiváros"){
-            if (indexFrom > indexTo){
-               swap(indexFrom, indexTo);
-               swap(from, to);
-            }
-         }
-
-         v[indexFrom].lines.push_back(FerryLine(&v[indexTo], _time));
-
-         if (from == "Graphiváros" || to == "Graphiváros"){
-            v[indexTo].lines.push_back(FerryLine(&v[indexFrom], _time));
+      if (from != "Graphiváros" && to != "Graphiváros"){
+         if (indexFrom > indexTo){
+            swap(indexFrom, indexTo);
+            swap(from, to);
          }
       }
 
-      for (size_t i = 0; i < v.size(); i++){
-        if (i == v.size()-1) v[i].next = &(*v.begin());
-        else (v[i].next = &(*(v.begin()+i+1)));
-      }
+      cities[indexFrom].lines.push_back(FerryLine(&cities[indexTo], _time));
 
-      File >> T;
+      if (from == "Graphiváros" || to == "Graphiváros"){
+         cities[indexTo].lines.push_back(FerryLine(&cities[indexFrom], _time));
+      }
+   }
+
+   cin >> T;
+
+   for (size_t i = 0; i < cities.size(); i++){
+     if (i == cities.size()-1) cities[i].next = &(*cities.begin());
+     else (cities[i].next = &(*(cities.begin()+i+1)));
    }
 }
 
