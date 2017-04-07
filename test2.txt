@@ -1,0 +1,24 @@
+12
+Graphiváros
+GA
+GB
+GC
+GD
+GE
+GF
+GG
+GH
+GI
+GJ
+GK
+10 20 30 20 10 20 30 20 10 20 30 20
+8
+Graphiváros GA 5
+GB GK 100
+GD GH 20
+GD GE 5
+GJ GE 15
+GI GH 5
+Graphiváros GJ 60
+GF Graphiváros 80
+225
