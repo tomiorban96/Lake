@@ -72,6 +72,7 @@ void Backtrack::pa8(){/* Megoldás kijelzése */
 }
 
 void Backtrack::run(){
+
    read();
 
    pa0();
@@ -126,6 +127,7 @@ void Backtrack::read(){
    for (int i = 0; i < data->F; i++){
 
       int indexFrom = -1, indexTo = -1, _time;
+
       string from, to;
 
       cin >> from >> to >> _time;
