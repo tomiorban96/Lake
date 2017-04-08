@@ -14,5 +14,6 @@ Data* Data::data = nullptr;
 
 int main(int argc, char const *argv[]) {
    Backtrack bt;
-   return bt.run();
+   bt.run();
+   return 0;
 }

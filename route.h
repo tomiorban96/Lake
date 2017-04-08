@@ -28,7 +28,7 @@ public:
        this->bicTime=r.bicTime;
        this->passedTime=r.passedTime;
        this->position=r.position;
-       this->fCities=r.fCities; //tarolokat is lehet egyenl�v� tenni, megneztem
+       this->fCities=r.fCities;
        this->copy_of_v2=r.copy_of_v2;
        this->copy_of_v3=r.copy_of_v3;
    }

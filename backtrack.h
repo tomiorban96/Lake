@@ -26,7 +26,7 @@ public:
    int ft1(); /* A célt elértük? */
    void pa8(); /* Megoldás kijelzése */
 
-   int run();
+   void run();
    void read();
 };
 

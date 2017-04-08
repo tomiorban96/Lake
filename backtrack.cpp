@@ -27,7 +27,6 @@ void Backtrack::pa4(){/*Visszaállítás */
    v2 = data->actualRoute.copy_of_v2;
    v3 = data->actualRoute.copy_of_v3;
    data->saves.pop();
-   //cout<<"vissza: " << data->actualRoute.position->name << endl;
 }
 
 void Backtrack::pa6(){/*Mentés */
@@ -41,14 +40,12 @@ void Backtrack::pa7(){/*Érvényre juttatás */
         data->actualRoute.bicTime += data->actualRoute.position->bicTime;
         data->actualRoute.passedTime += data->actualRoute.position->bicTime;
         data->actualRoute.position = data->actualRoute.position->next;
-        //cout<<"dontottem: " << data->actualRoute.position->name << endl;
     }
     else {
         data->actualRoute.passedTime += data->actualRoute.position->lines[v3 - 1].time;
         data->actualRoute.fCities.push_back(data->actualRoute.position->name);
         data->actualRoute.position = data->actualRoute.position->lines[v3 - 1].next;
         data->actualRoute.fCities.push_back(data->actualRoute.position->name);
-        //cout<<"dontottem: " << data->actualRoute.position->name << endl;
     }
 }
 
@@ -74,7 +71,7 @@ void Backtrack::pa8(){/* Megoldás kijelzése */
    else cout<<"no solution";
 }
 
-int Backtrack::run(){
+void Backtrack::run(){
    read();
 
    pa0();
@@ -112,8 +109,6 @@ int Backtrack::run(){
                     v1++;
                     v0=1;
         }
-   return 0;
-
 }
 
 void Backtrack::read(){
@@ -130,7 +125,7 @@ void Backtrack::read(){
 
    for (int i = 0; i < data->F; i++){
 
-      int indexFrom, indexTo, _time;
+      int indexFrom = -1, indexTo = -1, _time;
       string from, to;
 
       cin >> from >> to >> _time;
